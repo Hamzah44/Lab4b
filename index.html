@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Details</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Book Details</h1>
+  <p id="firstBookTitle"></p>
+  <p id="secondBookAuthor"></p>
+  <p id="allGenres"></p>
+
+  <script>
+    $(document).ready(function () {
+      // Simulated JSON data
+      const books = [
+        {
+          title: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          publicationYear: 1925,
+          genres: ["Fiction", "Classics"]
+        },
+        {
+          title: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          publicationYear: 1960,
+          genres: ["Fiction", "Coming-of-Age"]
+        }
+      ];
+
+      // Display the title of the first book in the HTML and log it to the console
+      const firstBookTitle = books[0].title;
+      $("#firstBookTitle").text("Title of the first book: " + firstBookTitle);
+      console.log("Title of the first book: " + firstBookTitle);
+
+      // Display the author of the second book in the HTML and log it to the console
+      const secondBookAuthor = books[1].author;
+      $("#secondBookAuthor").text("Author of the second book: " + secondBookAuthor);
+      console.log("Author of the second book: " + secondBookAuthor);
+
+      // Display the genres of all books in the HTML and log them to the console
+      const allGenres = books.map(book => book.genres.join(", ")).join("; ");
+      $("#allGenres").text("Genres of all books: " + allGenres);
+      console.log("Genres of all books: " + allGenres);
+    });
+  </script>
+</body>
+</html>
